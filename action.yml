@@ -1,0 +1,19 @@
+name: 'Mirror to GitHub'
+branding:
+  icon: 'download-cloud'
+  color: 'white'
+description: 'Mirror a repository to GitHub'
+inputs:
+  origin:
+    description: 'URL of remote git repository'
+    required: true
+  GITHUB_TOKEN:
+    description: 'set this to the value of secrets.GITHUB_TOKEN'
+    required: true
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.origin }}
+  env:
+    GITHUB_TOKEN: ${{ inputs.GITHUB_TOKEN }}
