@@ -35,7 +35,7 @@ jobs:
     steps:
       - name: mirror
         id: mirror
-        uses: bridgelightcloud/github-mirror@main
+        uses: bridgelightcloud/github-mirror-action@v1
         with:
           origin: 'TARGET_REPO_HERE'
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
