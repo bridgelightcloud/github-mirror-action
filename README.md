@@ -4,7 +4,16 @@ Github Mirror is a [GitHub Action](https://github.com/features/actions) that kee
 a mirror of an external repository. It will synchronize all branches and commits from the specified repository, it
 will not copy non-Git data such as Pull Requests.
 
-## Setup
+## Create from Template
+If you'd prefer to use the GitHub UI instead of the CLI, you can use the [template repository](https://github.com/bridgelightcloud/github-mirror-template).
+
+Steps:
+1. Click [Use this template](https://github.com/bridgelightcloud/github-mirror-template/generate).
+2. Name your repository
+3. Edit `.github/workflows/mirror.yml` and enter the URL you wish to mirror where it says `origin: ''`
+4. Commit your change
+
+## Manual Setup
 To create a mirror, start by creating a repository locally and creating a branch to hold the workflow file. The branch
 should be named such that it will not conflict with a branch name in the source repository.
 
@@ -50,7 +59,8 @@ $ git -C mirror push -u origin __mirror
 ```
 
 The workflow will start immediately and copy the source repository. The workflow will continue to run on the schedule 
-specified on the `cron` line (in the example above, 3 AM UTC every day).
+specified on the `cron` line (in the example above, 3 AM UTC every day). You can also run the workflow manually
+by selecting it in the Actions tab on GitHub.
 
 ## License
 The code is trivial, as such this repository is licensed under the Creative Commons CC-0 license.
