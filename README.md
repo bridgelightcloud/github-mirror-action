@@ -1,7 +1,7 @@
 # GitHub Mirror
 
 Github Mirror is a [GitHub Action](https://github.com/features/actions) that keeps a GitHub repository up to date as
-a mirror of an external repository. It will synchronize all branches and commits from the specified repository, it
+a mirror of an external repository. It will synchronize all branches and commits from the specified repository; it
 will not copy non-Git data such as Pull Requests.
 
 ## Create from Template
