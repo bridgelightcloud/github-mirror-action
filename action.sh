@@ -7,6 +7,7 @@ if [ -z "${REMOTE}" ]; then
   exit 1
 fi
 
+git config --global --add safe.directory /github/workspace
 git clone --bare "https://${GITHUB_ACTOR}:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" . || exit 1
 git remote add --mirror=fetch mirror "${REMOTE}" || exit 1
 git fetch mirror +refs/heads/*:refs/remotes/origin/* || exit 1
